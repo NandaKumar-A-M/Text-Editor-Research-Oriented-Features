@@ -1,0 +1,17 @@
+digraph "Cloud and Edge Architecture with Homomorphic Encryption" {
+	U [label="User/Client"]
+	HE [label="Homomorphic Encryption Module"]
+	C [label="Cloud Server"]
+	R [label="Result Processor"]
+	D [label="Decryption Module"]
+	E1 [label="Edge Device 1"]
+	E2 [label="Edge Device 2"]
+	U -> HE [label="Send Plain Data"]
+	HE -> C [label="Send Encrypted Data"]
+	C -> R [label="Compute on Encrypted Data"]
+	R -> D [label="Send Encrypted Results"]
+	D -> U [label="Decrypt and Get Results"]
+	E1 -> HE [label="Encrypt Data at Edge 1"]
+	HE -> E2 [label="Send Encrypted Data to Edge 2"]
+	E2 -> C [label="Process at Cloud via Edge 2"]
+}
